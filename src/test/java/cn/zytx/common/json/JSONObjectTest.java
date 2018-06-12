@@ -91,6 +91,7 @@ public class JSONObjectTest {
     public void getInteger() throws Exception {
         Integer integer1 = jsonObject.getInteger("integer1");
         Assert.assertEquals((Integer) 1 , integer1);
+        Assert.assertEquals("1" , jsonObject.setTolerant(true).getString("integer1"));
     }
 
     @Test

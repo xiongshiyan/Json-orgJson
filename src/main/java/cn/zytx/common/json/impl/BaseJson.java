@@ -8,8 +8,8 @@ import cn.zytx.common.json.JsonException;
  * @author xiongshiyan at 2018/6/11
  */
 public abstract class BaseJson<T extends Json> {
-    private boolean isStrict;
-    private boolean isTolerant;
+    private boolean isStrict = true;
+    private boolean isTolerant = true;
 
     public boolean isStrict(){return isStrict;}
 

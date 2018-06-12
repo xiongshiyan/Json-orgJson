@@ -80,135 +80,181 @@ public class JSONObject extends BaseJson<JSONObject> implements JsonObject {
 
     @Override
     public String getString(String key) {
-        assertKey(key);
-        boolean has = jsonObject.has(key);
-        String temp = !has ? null : this.jsonObject.getString(key);
-        return checkNullValue(key, temp);
+        return getString(key , null);
     }
 
     @Override
     public String getString(String key, String defaultValue) {
         assertKey(key);
         boolean has = jsonObject.has(key);
-        String temp = !has ? null : this.jsonObject.getString(key);
-        return null == temp ? defaultValue : temp;
+        if(!has){
+            return checkNullValue(key , defaultValue);
+        }
+        String temp;
+        if(isTolerant()){
+            temp = ValueCompatible.compatibleValue(this.jsonObject.get(key) , String.class);
+        }else {
+            temp = this.jsonObject.getString(key);
+        }
+        return temp;
     }
 
     @Override
     public Boolean getBoolean(String key) {
-        assertKey(key);
-        boolean has = jsonObject.has(key);
-        Boolean temp = !has ? null : this.jsonObject.getBoolean(key);
-        return checkNullValue(key, temp);
+        return getBoolean(key , null);
     }
 
     @Override
     public Boolean getBoolean(String key, Boolean defaultValue) {
         assertKey(key);
         boolean has = jsonObject.has(key);
-        Boolean temp = !has ? null : this.jsonObject.getBoolean(key);
-        return null == temp ? defaultValue : temp;
+        if(!has){
+            return checkNullValue(key , defaultValue);
+        }
+        Boolean temp;
+        if(isTolerant()){
+            temp = ValueCompatible.compatibleValue(this.jsonObject.get(key) , Boolean.class);
+        }else {
+            temp = this.jsonObject.getBoolean(key);
+        }
+        return temp;
     }
 
     @Override
     public Integer getInteger(String key) {
-        assertKey(key);
-        boolean has = jsonObject.has(key);
-        Integer temp = !has ? null : this.jsonObject.getInt(key);
-        return checkNullValue(key, temp);
+        return getInteger(key , null);
     }
 
     @Override
     public Integer getInteger(String key, Integer defaultValue) {
         assertKey(key);
         boolean has = jsonObject.has(key);
-        Integer temp = !has ? null : this.jsonObject.getInt(key);
-        return null == temp ? defaultValue : temp;
+        if(!has){
+            return checkNullValue(key , defaultValue);
+        }
+        Integer temp;
+        if(isTolerant()){
+            temp = ValueCompatible.compatibleValue(this.jsonObject.get(key) , Integer.class);
+        }else {
+            temp = this.jsonObject.getInt(key);
+        }
+        return temp;
     }
 
     @Override
     public Long getLong(String key) {
-        assertKey(key);
-        boolean has = jsonObject.has(key);
-        Long temp = !has ? null : this.jsonObject.getLong(key);
-        return checkNullValue(key, temp);
+        return getLong(key , null);
     }
 
     @Override
     public Long getLong(String key, Long defaultValue) {
         assertKey(key);
         boolean has = jsonObject.has(key);
-        Long temp = !has ? null : this.jsonObject.getLong(key);
-        return null == temp ? defaultValue : temp;
+        if(!has){
+            return checkNullValue(key , defaultValue);
+        }
+        Long temp;
+        if(isTolerant()){
+            temp = ValueCompatible.compatibleValue(this.jsonObject.get(key) , Long.class);
+        }else {
+            temp = this.jsonObject.getLong(key);
+        }
+        return temp;
     }
 
     @Override
     public Float getFloat(String key) {
-        assertKey(key);
-        boolean has = jsonObject.has(key);
-        Float temp = !has ? null : this.jsonObject.getFloat(key);
-        return checkNullValue(key, temp);
+        return getFloat(key , null);
     }
 
     @Override
     public Float getFloat(String key, Float defaultValue) {
         assertKey(key);
         boolean has = jsonObject.has(key);
-        Float temp = !has ? null : this.jsonObject.getFloat(key);
-        return null == temp ? defaultValue : temp;
+        if(!has){
+            return checkNullValue(key , defaultValue);
+        }
+        Float temp;
+        if(isTolerant()){
+            temp = ValueCompatible.compatibleValue(this.jsonObject.get(key) , Float.class);
+        }else {
+            temp = this.jsonObject.getFloat(key);
+        }
+        return temp;
     }
 
     @Override
     public Double getDouble(String key) {
-        assertKey(key);
-        boolean has = jsonObject.has(key);
-        Double temp = !has ? null : this.jsonObject.getDouble(key);
-        return checkNullValue(key, temp);
+        return getDouble(key , null);
     }
 
     @Override
     public Double getDouble(String key, Double defaultValue) {
         assertKey(key);
         boolean has = jsonObject.has(key);
-        Double temp = !has ? null : this.jsonObject.getDouble(key);
-        return null == temp ? defaultValue : temp;
+        if(!has){
+            return checkNullValue(key , defaultValue);
+        }
+        Double temp;
+        if(isTolerant()){
+            temp = ValueCompatible.compatibleValue(this.jsonObject.get(key) , Double.class);
+        }else {
+            temp = this.jsonObject.getDouble(key);
+        }
+        return temp;
     }
 
     @Override
     public BigInteger getBigInteger(String key) {
-        assertKey(key);
-        boolean has = jsonObject.has(key);
-        BigInteger temp = !has ? null : this.jsonObject.getBigInteger(key);
-        return checkNullValue(key, temp);
+        return getBigInteger(key , null);
     }
 
     @Override
     public BigInteger getBigInteger(String key, BigInteger defaultValue) {
         assertKey(key);
         boolean has = jsonObject.has(key);
-        BigInteger temp = !has ? null : this.jsonObject.getBigInteger(key);
-        return null == temp ? defaultValue : temp;
+        if(!has){
+            return checkNullValue(key , defaultValue);
+        }
+        BigInteger temp;
+        if(isTolerant()){
+            temp = ValueCompatible.compatibleValue(this.jsonObject.get(key) , BigInteger.class);
+        }else {
+            temp = this.jsonObject.getBigInteger(key);
+        }
+        return temp;
     }
 
     @Override
     public BigDecimal getBigDecimal(String key) {
-        assertKey(key);
-        boolean has = jsonObject.has(key);
-        BigDecimal temp = !has ? null : this.jsonObject.getBigDecimal(key);
-        return checkNullValue(key, temp);
+        return getBigDecimal(key , null);
     }
 
     @Override
     public BigDecimal getBigDecimal(String key, BigDecimal defaultValue) {
         assertKey(key);
         boolean has = jsonObject.has(key);
-        BigDecimal temp = !has ? null : this.jsonObject.getBigDecimal(key);
-        return null == temp ? defaultValue : temp;
+        if(!has){
+            return checkNullValue(key , defaultValue);
+        }
+        BigDecimal temp;
+        if(isTolerant()){
+            temp = ValueCompatible.compatibleValue(this.jsonObject.get(key) , BigDecimal.class);
+        }else {
+            temp = this.jsonObject.getBigDecimal(key);
+        }
+        return temp;
     }
 
     @Override
     public <T> T get(String key, Class<T> clazz) {
-        return null;
+        assertKey(key);
+        boolean has = jsonObject.has(key);
+        if(!has){
+            return checkNullValue(key , null);
+        }
+        T temp = ValueCompatible.compatibleValue(this.jsonObject.get(key) , clazz);
+        return checkNullValue(key, temp);
     }
 
     @Override

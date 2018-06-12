@@ -51,49 +51,97 @@ public class JSONArray extends BaseJson<JSONArray> implements JsonArray {
     @Override
     public String getString(int index) {
         assertIndex(index , size());
-        return jsonArray.optString(index);
+        String temp;
+        if(isTolerant()){
+            temp = ValueCompatible.compatibleValue(jsonArray.opt(index), String.class);
+        }else {
+            temp = jsonArray.getString(index);
+        }
+        return checkNullValue(index , temp);
     }
 
     @Override
     public Boolean getBoolean(int index) {
         assertIndex(index , size());
-        return jsonArray.optBoolean(index);
+        Boolean temp;
+        if(isTolerant()){
+            temp = ValueCompatible.compatibleValue(jsonArray.opt(index), Boolean.class);
+        }else {
+            temp = jsonArray.getBoolean(index);
+        }
+        return checkNullValue(index , temp);
     }
 
     @Override
     public Integer getInteger(int index) {
         assertIndex(index , size());
-        return jsonArray.optInt(index);
+        Integer temp;
+        if(isTolerant()){
+            temp = ValueCompatible.compatibleValue(jsonArray.opt(index), Integer.class);
+        }else {
+            temp = jsonArray.getInt(index);
+        }
+        return checkNullValue(index , temp);
     }
 
     @Override
     public Long getLong(int index) {
         assertIndex(index , size());
-        return jsonArray.optLong(index);
+        Long temp;
+        if(isTolerant()){
+            temp = ValueCompatible.compatibleValue(jsonArray.opt(index), Long.class);
+        }else {
+            temp = jsonArray.getLong(index);
+        }
+        return checkNullValue(index , temp);
     }
 
     @Override
     public Double getDouble(int index) {
         assertIndex(index , size());
-        return jsonArray.optDouble(index);
+        Double temp;
+        if(isTolerant()){
+            temp = ValueCompatible.compatibleValue(jsonArray.opt(index), Double.class);
+        }else {
+            temp = jsonArray.getDouble(index);
+        }
+        return checkNullValue(index , temp);
     }
 
     @Override
     public Float getFloat(int index) {
         assertIndex(index , size());
-        return jsonArray.optFloat(index);
+        Float temp;
+        if(isTolerant()){
+            temp = ValueCompatible.compatibleValue(jsonArray.opt(index), Float.class);
+        }else {
+            temp = jsonArray.getFloat(index);
+        }
+        return checkNullValue(index , temp);
     }
 
     @Override
     public BigInteger getBigInteger(int index) {
         assertIndex(index , size());
-        return jsonArray.optBigInteger(index , new BigInteger("0"));
+        BigInteger temp;
+        if(isTolerant()){
+            temp = ValueCompatible.compatibleValue(jsonArray.opt(index), BigInteger.class);
+        }else {
+            temp = jsonArray.getBigInteger(index);
+        }
+        return checkNullValue(index , temp);
     }
 
     @Override
     public BigDecimal getBigDecimal(int index) {
         assertIndex(index , size());
-        return jsonArray.optBigDecimal(index , new BigDecimal("0"));
+        BigDecimal temp;
+        if(isTolerant()){
+            temp = ValueCompatible.compatibleValue(jsonArray.opt(index), BigDecimal.class);
+        }else {
+            temp = jsonArray.getBigDecimal(index);
+        }
+        return checkNullValue(index , temp);
     }
 
     @Override
