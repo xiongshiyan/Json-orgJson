@@ -31,7 +31,9 @@ public class JSONArray extends JsonBase implements JsonArray {
 
     @Override
     public JsonArray parse(String arrayString) {
-        return new JSONArray(arrayString);
+        jsonArray = new org.json.JSONArray(arrayString);
+        return this;
+        //return new JSONArray(arrayString);
     }
 
     @Override

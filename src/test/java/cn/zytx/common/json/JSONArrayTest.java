@@ -19,7 +19,10 @@ public class JSONArrayTest {
 
     @Test
     public void parse() throws Exception {
-
+        String src = "[\"12\",\"13\"]";
+        JsonArray array = jsonArray.parse(src);
+        Assert.assertEquals(2 , jsonArray.size());
+        Assert.assertEquals(2 , array.size());
     }
 
     @Test

@@ -246,6 +246,8 @@ public class JSONObjectTest {
         JsonObject parse = jsonObject.parse("{\"xx\":\"ss\" , \"ss\":{\"cc\":12}}");
         Assert.assertTrue(parse.containsKey("xx"));
         Assert.assertTrue(parse.containsKey("ss"));
+        Assert.assertTrue(jsonObject.containsKey("xx"));
+        Assert.assertTrue(jsonObject.containsKey("ss"));
     }
 
     @Test(expected = JsonException.class)
