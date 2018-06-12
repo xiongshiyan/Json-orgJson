@@ -8,6 +8,7 @@ import cn.zytx.common.json.JsonObject;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -60,7 +61,9 @@ public class JSONObject extends BaseJson<JSONObject> implements JsonObject {
         if(t instanceof org.json.JSONObject){
             return new JSONObject((org.json.JSONObject) t);
         }
-
+        if(t instanceof Map){
+            return new JSONObject((Map<String, Object>) t);
+        }
         return (JsonObject) t;
     }
 
@@ -74,6 +77,9 @@ public class JSONObject extends BaseJson<JSONObject> implements JsonObject {
 
         if(t instanceof org.json.JSONArray){
             return new JSONArray((org.json.JSONArray)t);
+        }
+        if(t instanceof List){
+            return new JSONArray((List)t);
         }
         return (JsonArray) t;
     }

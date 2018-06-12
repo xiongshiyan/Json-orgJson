@@ -3,6 +3,7 @@ package cn.zytx.common.json.impl;
 import cn.zytx.common.json.Json;
 import cn.zytx.common.json.JsonArray;
 import cn.zytx.common.json.JsonObject;
+import jdk.nashorn.internal.runtime.regexp.joni.constants.OPCode;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;
@@ -16,6 +17,9 @@ public class JSONArray extends BaseJson<JSONArray> implements JsonArray {
 
     public JSONArray(org.json.JSONArray jsonArray){
         this.jsonArray = jsonArray;
+    }
+    public JSONArray(List<Object> list){
+        this.jsonArray = new org.json.JSONArray(list);
     }
     public JSONArray(){
         this.jsonArray = new org.json.JSONArray();
@@ -151,6 +155,9 @@ public class JSONArray extends BaseJson<JSONArray> implements JsonArray {
         if(opt instanceof org.json.JSONObject){
             return new JSONObject((org.json.JSONObject)opt);
         }
+        if(opt instanceof Map){
+            return new JSONObject((Map<String, Object>) opt);
+        }
         return (JsonObject) opt;
     }
 
@@ -160,6 +167,9 @@ public class JSONArray extends BaseJson<JSONArray> implements JsonArray {
         Object opt = jsonArray.opt(index);
         if(opt instanceof org.json.JSONArray){
             return new JSONArray((org.json.JSONArray)opt);
+        }
+        if(opt instanceof List){
+            return new JSONArray((List<Object>) opt);
         }
         return (JsonArray) opt;
     }

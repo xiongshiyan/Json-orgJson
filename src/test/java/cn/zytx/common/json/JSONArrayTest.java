@@ -52,7 +52,7 @@ public class JSONArrayTest {
         jsonArray.put(true);
         jsonArray.put("false");
         System.out.println(jsonArray);
-        Assert.assertEquals(true , jsonArray.setTolerant(false).getBoolean(0));
+        Assert.assertEquals(true , jsonArray.getBoolean(0));
         Assert.assertEquals(false , jsonArray.getBoolean(1));
     }
 
