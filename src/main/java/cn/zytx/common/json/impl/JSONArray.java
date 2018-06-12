@@ -11,7 +11,7 @@ import java.util.*;
 /**
  * @author xiongshiyan at 2018/6/11
  */
-public class JSONArray extends JsonBase implements JsonArray {
+public class JSONArray extends BaseJson<JSONArray> implements JsonArray {
     private org.json.JSONArray jsonArray;
 
     public JSONArray(org.json.JSONArray jsonArray){

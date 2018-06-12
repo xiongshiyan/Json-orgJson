@@ -14,7 +14,7 @@ import java.util.Set;
 /**
  * @author xiongshiyan at 2018/6/10
  */
-public class JSONObject extends JsonBase implements JsonObject {
+public class JSONObject extends BaseJson<JSONObject> implements JsonObject {
 
     private org.json.JSONObject jsonObject;
 

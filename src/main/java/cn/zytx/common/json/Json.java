@@ -28,13 +28,25 @@ public interface Json<T extends Json> {
      * 是否严格，像Json没有键而去获取是抛异常还是返回Null
      * @return true if isStrict
      */
-    boolean isStrict();
+    default boolean isStrict(){return true;}
 
     /**
      * 设置是否严格
      * @param isStrict true if isStrict
      */
-    void setStrict(boolean isStrict);
+    T setStrict(boolean isStrict);
+
+    /**
+     * 是否类型宽容
+     * @return true if is typed-tolerant
+     */
+    default boolean isTolerant(){return true;}
+
+    /**
+     * 设置是否宽容
+     * @param isTolerant true if is typed-tolerant
+     */
+    T setTolerant(boolean isTolerant);
 
     /**
      * 具体的实现类
