@@ -37,18 +37,6 @@ public interface Json<T extends Json> {
     T setStrict(boolean isStrict);
 
     /**
-     * 是否类型宽容
-     * @return true if is typed-tolerant
-     */
-    default boolean isTolerant(){return true;}
-
-    /**
-     * 设置是否宽容
-     * @param isTolerant true if is typed-tolerant
-     */
-    T setTolerant(boolean isTolerant);
-
-    /**
      * 具体的实现类
      */
     Object unwrap();
