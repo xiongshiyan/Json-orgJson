@@ -6,6 +6,8 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.Arrays;
+import java.util.List;
+
 /**
  * 使用的时候不会出现跟具体JSON框架耦合的代码
  */
@@ -162,5 +164,12 @@ public class JSONArrayTest {
         jsonObject.put("k2" , "v2");
         jsonArray.put(jsonObject);
         Assert.assertEquals("[{\"k1\":\"v1\",\"k2\":\"v2\"}]" , jsonArray.toString());
+    }
+
+    @Test
+    public void testFromList() throws Exception {
+        List<Object> list = Arrays.asList("12","21",12);
+        JsonArray array = jsonArray.fromList(list);
+        Assert.assertEquals("[\"12\",\"21\",12]" , array.toString());
     }
 }

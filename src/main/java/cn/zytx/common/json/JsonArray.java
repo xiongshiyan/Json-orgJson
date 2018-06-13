@@ -3,6 +3,7 @@ package cn.zytx.common.json;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.Collection;
+import java.util.List;
 
 /**
  * 代表一个Json Array
@@ -31,4 +32,6 @@ public interface JsonArray extends Json<JsonArray>{
     JsonArray put(Object o);
     JsonArray put(int index , Object o);
     JsonArray putAll(Collection<?> os);
+
+    JsonArray fromList(List<Object> list);
 }

@@ -233,4 +233,10 @@ public class JSONArray extends BaseJson<JSONArray> implements JsonArray {
     public boolean equals(Object obj) {
         return jsonArray.equals(obj);
     }
+
+    @Override
+    public JsonArray fromList(List<Object> list) {
+        this.jsonArray = new org.json.JSONArray(list);
+        return this;
+    }
 }
