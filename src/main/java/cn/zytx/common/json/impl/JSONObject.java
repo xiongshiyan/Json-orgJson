@@ -283,6 +283,20 @@ public class JSONObject extends BaseJson<JSONObject> implements JsonObject {
         return jsonObject.has(key);
     }
 
+    @Override
+    public boolean containsValue(Object value) {
+        Set<String> keySet = jsonObject.keySet();
+        for (String key : keySet) {
+            Object o = jsonObject.get(key);
+            if(null == o){
+                continue;
+            }
+            if(o.equals(value)){
+                return true;
+            }
+        }
+        return false;
+    }
 
     @Override
     public JsonObject put(String key, Object value) {
