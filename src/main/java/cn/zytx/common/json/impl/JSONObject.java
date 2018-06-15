@@ -311,11 +311,12 @@ public class JSONObject extends BaseJson<JSONObject> implements JsonObject {
     }
 
     @Override
-    public void clear() {
+    public JsonObject clear() {
         Set<String> keySet = jsonObject.keySet();
         for (Object key : keySet.toArray()) {
             jsonObject.remove(key.toString());
         }
+        return this;
     }
 
     @Override
