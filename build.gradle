@@ -1,5 +1,5 @@
 group 'cn.zytx.common'
-version '1.0-SNAPSHOT'
+version '1.0'
 
 apply plugin: 'java'
 apply plugin: 'maven-publish'
@@ -24,7 +24,7 @@ def MAVEN_REPO_SNAPSHOT_URL= 'http://192.168.2.188:8081/nexus/content/repositori
 def NEXUS_USERNAME='admin'
 //登录nexus oss的密码
 def NEXUS_PASSWORD='admin123'
-def VERSION = '1.0-SNAPSHOT'
+def VERSION = '1.0'
 def ARTIFACT_ID = 'json-orgjson'
 def GROUP_ID = 'cn.zytx.common'
 // type
