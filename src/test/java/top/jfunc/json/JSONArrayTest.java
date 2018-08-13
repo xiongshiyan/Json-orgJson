@@ -1,9 +1,9 @@
-package cn.zytx.common.json;
+package top.jfunc.json;
 
-import cn.zytx.common.json.impl.JSONArray;
-import cn.zytx.common.json.impl.JSONObject;
+import top.jfunc.json.impl.JSONArray;
 import org.junit.Assert;
 import org.junit.Test;
+import top.jfunc.json.impl.JSONObject;
 
 import java.util.Arrays;
 import java.util.List;

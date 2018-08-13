@@ -1,9 +1,9 @@
-package cn.zytx.common.json.impl;
+package top.jfunc.json.impl;
 
-import cn.zytx.common.json.Json;
-import cn.zytx.common.json.JsonArray;
-import cn.zytx.common.json.JsonException;
-import cn.zytx.common.json.JsonObject;
+import top.jfunc.json.Json;
+import top.jfunc.json.JsonArray;
+import top.jfunc.json.JsonException;
+import top.jfunc.json.JsonObject;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;

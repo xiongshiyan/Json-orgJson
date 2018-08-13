@@ -1,9 +1,9 @@
-package cn.zytx.common.json;
+package top.jfunc.json;
 
-import cn.zytx.common.json.impl.JSONObject;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import top.jfunc.json.impl.JSONObject;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;
