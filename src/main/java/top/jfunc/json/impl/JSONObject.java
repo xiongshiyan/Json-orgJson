@@ -5,6 +5,7 @@ import top.jfunc.json.Json;
 import top.jfunc.json.JsonArray;
 import top.jfunc.json.JsonException;
 import top.jfunc.json.JsonObject;
+import top.jfunc.json.util.Bean2Map;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;
@@ -339,9 +340,13 @@ public class JSONObject extends BaseJson<JSONObject> implements JsonObject {
     }
 
     @Override
-    public String serialize(Object javaBean) {
-        return new org.json.JSONObject(javaBean).toString();
+    public <T> String serialize(T javaBean, boolean nullHold, String... ignoreFields) {
         //throw new JsonException(new UnsupportedOperationException());
+        //1.return new org.json.JSONObject(javaBean).toString();
+
+        //2.bean->map->json string
+        Map<String, Object> objectMap = Bean2Map.convert(javaBean, nullHold ,ignoreFields);
+        return new org.json.JSONObject(objectMap).toString();
     }
 
     @Override
