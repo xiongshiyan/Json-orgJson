@@ -251,7 +251,7 @@ public class JSONObjectTest {
         Assert.assertTrue(jsonObject.containsKey("ss"));
     }
 
-    @Test(expected = JsonException.class)
+    @Test//(expected = JsonException.class)
     public void serialize() throws Exception {
         JsonObjectBean javaBean = new JsonObjectBean();
         javaBean.setK1("11");
@@ -259,7 +259,7 @@ public class JSONObjectTest {
         System.out.println(serialize);
     }
 
-    @Test(expected = JsonException.class)
+    @Test//(expected = JsonException.class)
     public void deserialize() throws Exception {
         JsonObjectBean deserialize = jsonObject.deserialize("{\"k1\":\"11\"}", JsonObjectBean.class);
         System.out.println(deserialize);

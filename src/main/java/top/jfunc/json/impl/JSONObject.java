@@ -1,5 +1,6 @@
 package top.jfunc.json.impl;
 
+import top.jfunc.common.utils.Map2Bean;
 import top.jfunc.json.Json;
 import top.jfunc.json.JsonArray;
 import top.jfunc.json.JsonException;
@@ -339,12 +340,15 @@ public class JSONObject extends BaseJson<JSONObject> implements JsonObject {
 
     @Override
     public String serialize(Object javaBean) {
-        throw new JsonException(new UnsupportedOperationException());
+        return new org.json.JSONObject(javaBean).toString();
+        //throw new JsonException(new UnsupportedOperationException());
     }
 
     @Override
     public <T> T deserialize(String jsonString, Class<T> clazz) {
-        throw new JsonException(new UnsupportedOperationException());
+        Map<String, Object> map = new org.json.JSONObject(jsonString).toMap();
+        return Map2Bean.convert(map, clazz);
+       // throw new JsonException(new UnsupportedOperationException());
     }
 
     @Override

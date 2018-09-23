@@ -17,7 +17,6 @@ public class JsonObjectBean {
     private Float float1;
     private BigInteger bigInteger1;
     private BigDecimal bigDecimal1;
-    private Map<String , String> k3;
 
     public String getK1() {
         return k1;
@@ -91,14 +90,6 @@ public class JsonObjectBean {
         this.bigDecimal1 = bigDecimal1;
     }
 
-    public Map<String, String> getK3() {
-        return k3;
-    }
-
-    public void setK3(Map<String, String> k3) {
-        this.k3 = k3;
-    }
-
     @Override
     public String toString() {
         return "JsonObjectBean{" +
@@ -111,7 +102,6 @@ public class JsonObjectBean {
                 ", float1=" + float1 +
                 ", bigInteger1=" + bigInteger1 +
                 ", bigDecimal1=" + bigDecimal1 +
-                ", k3=" + k3 +
                 '}';
     }
 }
