@@ -335,7 +335,8 @@ public class JSONObject extends BaseJson<JSONObject> implements JsonObject {
     @Override
     public JsonObject fromMap(Map<String, Object> map) {
         this.jsonObject = new org.json.JSONObject(map);
-        return new JSONObject(map);
+        return this;
+//        return new JSONObject(map);
     }
 
     @Override
