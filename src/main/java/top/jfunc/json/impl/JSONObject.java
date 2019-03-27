@@ -381,4 +381,25 @@ public class JSONObject extends BaseJson<JSONObject> implements JsonObject {
         return jsonObject.equals(obj);
     }
 
+    @Override
+    public Json toJson(Object o) {
+        if(null == o){
+            return null;
+        }
+
+        if(o instanceof org.json.JSONObject){
+            return new JSONObject((org.json.JSONObject) o);
+        }
+        if(o instanceof Map){
+            return new JSONObject((Map<String, Object>) o);
+        }
+
+        if(o instanceof org.json.JSONArray){
+            return new JSONArray((org.json.JSONArray) o);
+        }
+        if(o instanceof List){
+            return new JSONArray((List<Object>) o);
+        }
+        return (Json)o;
+    }
 }
